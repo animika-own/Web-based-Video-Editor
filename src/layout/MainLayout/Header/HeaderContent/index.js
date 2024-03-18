@@ -1,12 +1,16 @@
 // material-ui
-import { Box, IconButton, Link, useMediaQuery } from '@mui/material';
-import { GithubOutlined } from '@ant-design/icons';
+import { Box, useMediaQuery } from '@mui/material';
+import Stack from '@mui/material/Stack';
 
 // project import
 import Search from './Search';
 import Profile from './Profile';
-import Notification from './Notification';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import MobileSection from './MobileSection';
+import Button from '@mui/material/Button';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 // ==============================|| HEADER - CONTENT ||============================== //
 
@@ -17,22 +21,20 @@ const HeaderContent = () => {
     <>
       {!matchesXs && <Search />}
       {matchesXs && <Box sx={{ width: '100%', ml: 1 }} />}
+      <Stack direction="row" justifyContent="space-evenly" alignItems="center" spacing={2}>
+        <Button variant="contained" endIcon={<PersonAddAltIcon />} sx={{ bgcolor: '#cccccc', color: '#555555' }}>
+          Invite
+        </Button>
 
-      <IconButton
-        component={Link}
-        href="https://github.com/codedthemes/mantis-free-react-admin-template"
-        target="_blank"
-        disableRipple
-        color="secondary"
-        title="Download Free Version"
-        sx={{ color: 'text.primary', bgcolor: 'grey.100' }}
-      >
-        <GithubOutlined />
-      </IconButton>
+        <Button variant="contained" endIcon={<ElectricBoltIcon sx={{ color: '#ffa219' }} />} sx={{ bgcolor: '#ffd599', color: '#555555' }}>
+          Upgrade
+        </Button>
+        <HelpOutlineIcon />
 
-      <Notification />
-      {!matchesXs && <Profile />}
-      {matchesXs && <MobileSection />}
+        <NotificationsNoneOutlinedIcon />
+        {!matchesXs && <Profile />}
+        {matchesXs && <MobileSection />}
+      </Stack>
     </>
   );
 };
