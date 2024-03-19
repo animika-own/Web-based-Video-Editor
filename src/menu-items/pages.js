@@ -1,33 +1,48 @@
 // assets
-import { LoginOutlined, ProfileOutlined } from '@ant-design/icons';
+import AutoAwesomeMosaicOutlinedIcon from '@mui/icons-material/AutoAwesomeMosaicOutlined';
+import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
+import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
+import VibrationOutlinedIcon from '@mui/icons-material/VibrationOutlined';
 
 // icons
 const icons = {
-  LoginOutlined,
-  ProfileOutlined
+  AutoAwesomeMosaicOutlinedIcon,
+  FolderOutlinedIcon,
+  PodcastsOutlinedIcon,
+  VibrationOutlinedIcon
 };
 
 // ==============================|| MENU ITEMS - EXTRA PAGES ||============================== //
 
 const pages = {
-  id: 'authentication',
-  title: 'Authentication',
   type: 'group',
   children: [
     {
-      id: 'login1',
-      title: 'Login',
+      id: 'template',
+      title: 'Template',
       type: 'item',
-      url: '/login',
-      icon: icons.LoginOutlined,
+      icon: icons.AutoAwesomeMosaicOutlinedIcon,
       target: true
     },
     {
-      id: 'register1',
-      title: 'Register',
+      id: 'video',
+      title: 'All Videoes',
       type: 'item',
-      url: '/register',
-      icon: icons.ProfileOutlined,
+      icon: icons.FolderOutlinedIcon,
+      target: true
+    },
+    {
+      id: 'podcast',
+      title: 'Podcast & Shows',
+      type: 'item',
+      icon: icons.PodcastsOutlinedIcon,
+      target: true
+    },
+    {
+      id: 'kit',
+      title: 'Brand Kit',
+      type: 'item',
+      icon: icons.VibrationOutlinedIcon,
       target: true
     }
   ]
